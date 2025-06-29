@@ -1,0 +1,7 @@
+sounddevice
+numpy
+scipy
+pynput
+faster-whisper
+torch --index-url https://download.pytorch.org/whl/cpu
+openai
