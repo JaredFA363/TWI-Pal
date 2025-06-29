@@ -1,0 +1,98 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f1fe; /* Light blue-gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 1.5rem; /* More rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+    padding: 2.5rem; /* Increased padding */
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Increased gap between elements */
+}
+
+.microphone-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px; /* Larger button */
+    height: 80px; /* Larger button */
+    border-radius: 50%;
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradient background */
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    border: none;
+    outline: none;
+    margin: 0 auto; /* Center the button */
+}
+
+.microphone-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6);
+}
+
+.microphone-button.active {
+    background-image: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); /* Red when active */
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(239, 68, 68, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.input-display, .response-display {
+    min-height: 80px; /* Ensure visible height */
+    background-color: #f8fafc; /* Lighter background for displays */
+    border-radius: 0.75rem;
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    color: #334155; /* Slate-700 */
+    line-height: 1.6;
+    word-wrap: break-word; /* Ensure text wraps */
+}
+
+.response-display {
+    background-color: #e0f2fe; /* Light blue for chatbot response */
+    border-color: #90cdf4;
+}
+
+.loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #667eea;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto; /* Center the spinner */
+    display: none; /* Hidden by default */
+}
+
+.loading-spinner.active {
+    display: block;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Microphone SVG Icon Styling */
+.microphone-button svg {
+    width: 36px; /* SVG size */
+    height: 36px;
+}
